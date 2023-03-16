@@ -1,41 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Minha Pagina de Internet</title>
+   <title>Minha Pagina de Internet</title>
 
-<style>
-body{
- background: green;
-}
- 
- h1{
- background-color:blue;
-  color:white
- }
-</style>
+   <style>
+      body {
+         background: green;
+      }
+
+      h1 {
+         background-color: blue;
+         color: white
+      }
+   </style>
 
 </head>
 
 <body>
 
-<h1> minha Pagina legal</h1>
-<p>This is a paragraph.</p>
+   <h1> minha Pagina legal</h1>
+   <p>This is a paragraph.</p>
 
-<button style="background-color: blue;" onClick="alert('hello world')" >Clique para ver </button>
+   <button style="background-color: blue;" onClick="alert('hello world')">Clique para ver </button>
+   <br>
+   <label>Pesquise seu Nome </label>
+   <input style="background-color: red" />
+
+
+   <ul>
+      <li>TESTE 1</li>
+      <li>TESTE 2</li>
+      <li>TESTE 3</li>
+      <li>TESTE 4</li>
+      <li>TESTE 5</li>
+   </ul>
+
+
+   <label>Multiplicar</label>
+   <input id="num1Mult" type="number" />
+   *
+   <input id="num2Mult" type="number" />
+   <button onclick="Multplicar()">Ver Resultado</button>
 <br>
-<label>Pesquise seu Nome </label>
-<input style="background-color: red"/>
 
+   <label>Somar</label>
+   <input id="num1Som" type="number" />
+   +
+   <input id="num2Som" type="number" />
+   <button onclick="Somar()">Ver Resultado</button>
 
-<ul>
-   <li>TESTE 1</li>
-   <li>TESTE 2</li>
-   <li>TESTE 3</li> 
-   <li>TESTE 4</li> 
-   <li>TESTE 5</li>  
-</ul>
+   <br>
+   <label>Substrair</label>
+   <input id="num1Sub" type="number" />
+   -
+   <input id="num2Sub" type="number" />
+   <button onclick="Subtrair()">Ver Resultado</button>
 
+   <script>
+      function Multplicar() {
+         var num1 = document.getElementById("num1Mult").value;
+         var num2 = document.getElementById("num2Mult").value;
+         var resultado = parseInt(num1) * parseInt(num2);
+         alert(resultado);
 
+      }
+
+      function Somar() {
+         var num1 = document.getElementById("num1Mult").value;
+         var num2 = document.getElementById("num2Mult").value;
+         var resultado = parseInt(num1) * parseInt(num2);
+         alert(resultado);
+
+      }
+
+      function Subtrair() {
+         var num1 = document.getElementById("num1Mult").value;
+         var num2 = document.getElementById("num2Mult").value;
+         var resultado = parseInt(num1) * parseInt(num2);
+         alert(resultado);
+
+      }
+   </script>
 </body>
+
 </html>
