@@ -14,11 +14,20 @@
          background-color: blue;
          color: white
       }
+
+      .ssds {
+         background-color: cadetblue;
+      }
+
+      #btnSubtrair {
+         background-color: brown;
+      }
    </style>
 
 </head>
 
 <body>
+
 
    <h1> minha Pagina legal</h1>
    <p>This is a paragraph.</p>
@@ -42,21 +51,45 @@
    <input id="num1Mult" type="number" />
    *
    <input id="num2Mult" type="number" />
-   <button onclick="Multplicar()">Ver Resultado</button>
-<br>
+   <button class="ssds" id="btnMult" onclick="Multplicar()">Ver Resultado</button>
+   <br>
 
    <label>Somar</label>
    <input id="num1Som" type="number" />
    +
    <input id="num2Som" type="number" />
-   <button onclick="Somar()">Ver Resultado</button>
+   <button class="ssds" id="btnSomar" onclick="Somar()">Ver Resultado</button>
 
    <br>
    <label>Substrair</label>
    <input id="num1Sub" type="number" />
    -
+
    <input id="num2Sub" type="number" />
-   <button onclick="Subtrair()">Ver Resultado</button>
+   <button id="btnSubtrair" onclick="Subtrair()">Ver Resultado</button>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <label>Seu Nome</label>
+   <input type="text" />
+   <button id="btnNome">informe seu nome</button>
+   <p  id="resulta">Resultado Nome</p>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <label>Sua Cidade</label>
+   <input type="text" />
+   <button id="btnCidade">Cidade</button>
+   <p id="resulta">Resultado Cidade</p>
 
    <script>
       function Multplicar() {
@@ -70,7 +103,7 @@
       function Somar() {
          var num1 = document.getElementById("num1Som").value;
          var num2 = document.getElementById("num2Som").value;
-         var resultado = parseInt(num1) + parseInt(num2);
+         var resultado = parseInt(num1) * parseInt(num2);
          alert(resultado);
 
       }
@@ -80,6 +113,20 @@
          var num2 = document.getElementById("num2Sub").value;
          var resultado = parseInt(num1) - parseInt(num2);
          alert(resultado);
+
+      }
+
+      function divisao_numeros() {
+         var num1 = document.getElementById("num1Som").value;
+         var num2 = document.getElementById("num2Som").value;
+         var resultado = parseInt(num1) / parseInt(num2);
+         alert(resultado);
+
+      }
+
+      function MudarNome() {
+         var pResultado = document.getElementById("resulta");
+         pResultado.textContent = "Mirosmar";
 
       }
    </script>
