@@ -84,12 +84,11 @@
    <br>
    <br>
    <br>
-   <br>
 
    <label>Seu Nome</label>
-   <input type="text" />
-   <button id="btnNome">informe seu nome</button>
-   <p  id="resulta">Resultado Nome</p>
+   <input type="text" id="NomeDigitado" />
+   <button id="btnNome" onclick="NomeDigitado()">informe seu nome</button>
+   <p  id="resultaNome">Resultado Nome</p>
 
 
    <br>
@@ -141,6 +140,19 @@
       function MudarNome() {
          var pResultado = document.getElementById("resulta");
          pResultado.textContent = "Mirosmar";
+
+
+      }
+
+
+      function NomeDigitado(){
+var nomeinformado=document.getElementById("NomeDigitado").value;
+document.getElementById("resultaNome").innerHTML=nomeinformado;
+      }
+
+      function CidadeDigitada(){
+      var cidadeinformada=document.getElementById("CidadeDigitada").value;
+      document.getElementById("resulta").innerHTML=cidadeinformada;
 
       }
 
