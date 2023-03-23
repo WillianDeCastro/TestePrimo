@@ -22,6 +22,18 @@
       #btnSubtrair {
          background-color: brown;
       }
+
+      .ptn{ 
+        display: inline-block;
+       }
+
+       #resultado{
+         margin-left: 5px;
+         color: rgb(28, 27, 27);
+         text-transform: uppercase;
+         font-family: sans-serif;
+      
+      }
    </style>
 
 </head>
@@ -87,12 +99,14 @@
    <br>
 
    <label>Sua Cidade</label>
-   <input type="text" />
-   <button id="btnCidade">Cidade</button>
-   <p id="resulta">Resultado Cidade</p>
-
+   <input  type="text" id="input-get" name="#" placeholder="coloque sua Cidade" />
+   <button onclick="SuaCidade()" id="btn-get"> Cidade</button><br>
+   <p class="ptn">Resultado Cidade:<p class="ptn" id="resultado"></p></p>
+   
+   
    <script>
-      function Multplicar() {
+         
+       function Multplicar() {
          var num1 = document.getElementById("num1Mult").value;
          var num2 = document.getElementById("num2Mult").value;
          var resultado = parseInt(num1) * parseInt(num2);
@@ -129,6 +143,14 @@
          pResultado.textContent = "Mirosmar";
 
       }
+
+      function SuaCidade() {
+         var btnGet = document.getElementById("input-get").value;
+              document.getElementById("resultado").innerHTML = btnGet ;
+                
+      }
+
+     
    </script>
 </body>
 
