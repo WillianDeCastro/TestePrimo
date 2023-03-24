@@ -23,16 +23,16 @@
          background-color: brown;
       }
 
-      .ptn{ 
-        display: inline-block;
-       }
+      .ptn {
+         display: inline-block;
+      }
 
-       #resultado{
+      #resultado {
          margin-left: 5px;
          color: rgb(28, 27, 27);
          text-transform: uppercase;
          font-family: sans-serif;
-      
+
       }
    </style>
 
@@ -47,7 +47,7 @@
    <button style="background-color: blue;" onClick="alert('hello world')">Clique para ver </button>
    <br>
    <label>Pesquise seu Nome </label>
-   <input style="background-color: red" />
+   <input style="color: red" />
 
 
    <ul>
@@ -88,7 +88,7 @@
    <label>Seu Nome</label>
    <input type="text" id="NomeDigitado" />
    <button id="btnNome" onclick="NomeDigitado()">informe seu nome</button>
-   <p  id="resultaNome">Resultado Nome</p>
+   <p id="resultaNome">Resultado Nome</p>
 
 
    <br>
@@ -98,19 +98,62 @@
    <br>
 
    <label>Sua Cidade</label>
-   <input  type="text" id="input-get" name="#" placeholder="coloque sua Cidade" />
+   <input type="text" id="input-get" name="#" placeholder="coloque sua Cidade" />
    <button onclick="SuaCidade()" id="btn-get"> Cidade</button><br>
-   <p class="ptn">Resultado Cidade:<p class="ptn" id="resultado"></p></p>
-   
-   
+   <p class="ptn">Resultado Cidade:
+   <p class="ptn" id="resultado"></p>
+   </p>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <hr />
+
+   <label>Idade</label>
+   <input type="text"  placeholder="inform sua idade" />
+   <br>
+
+   <label>Gosta de correr igual louco?</label>
+   <input type="text" placeholder="inform S ou N" />
+   <button id="BtnInformar" onclick="Dirigir(a)" > Informar</button><br>
+   <p class="ptn">Você pode dirigir:
+      <span class="ptn" id="ResltadoDrigir"></span>
+   </p>
+
    <script>
-         
-       function Multplicar() {
+
+      function Dirigir() {
+         var idade = parseInt(document.getElementById("Idade").value);
+         var informacao = document.getElementById("Pergunta").value;
+
+         var resultado = "";
+
+         if (idade >= 18 &&  informacao == "n") {
+            resultado = "pode dirigir"
+         }
+         else if(idade >= 18 &&  informacao = "s"){
+            resultado = "nunca irá dirigir seu canalha!"
+         }
+         else if(idade < 18 &  informacao == "s"){
+            resultado = "mesmo que pudesse não deixaria vc tirar a carta!"
+         }
+         else if(idade < 18 &&  informacao == "n"){
+            resultado = "é só esperar que um dia chega"
+         }
+
+         document.getElementById("ResultadoDirigir").textCtent == resultado;
+
+      }
+
+      function Multplicar() {
          var num1 = document.getElementById("num1Mult").value;
          var num2 = document.getElementById("num2Mult").value;
          var resultado = parseInt(num1) * parseInt(num2);
          alert(resultado);
-
       }
 
       function Somar() {
@@ -145,24 +188,20 @@
       }
 
 
-      function NomeDigitado(){
-var nomeinformado=document.getElementById("NomeDigitado").value;
-document.getElementById("resultaNome").innerHTML=nomeinformado;
+      function NomeDigitado() {
+         var nomeinformado = document.getElementById("NomeDigitado").value;
+         document.getElementById("resultaNome").innerHTML = nomeinformado;
       }
 
-      function CidadeDigitada(){
-      var cidadeinformada=document.getElementById("CidadeDigitada").value;
-      document.getElementById("resulta").innerHTML=cidadeinformada;
 
-      }
 
       function SuaCidade() {
          var btnGet = document.getElementById("input-get").value;
-              document.getElementById("resultado").innerHTML = btnGet ;
-                
+         document.getElementById("resultado").innerHTML = btnGet;
+
       }
 
-     
+
    </script>
 </body>
 
