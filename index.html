@@ -114,38 +114,38 @@
    <hr />
 
    <label>Idade</label>
-   <input type="text"  placeholder="inform sua idade" />
+   <input type="text"  id="idade" placeholder="informe sua idade" />
    <br>
 
    <label>Gosta de correr igual louco?</label>
-   <input type="text" placeholder="inform S ou N" />
-   <button id="BtnInformar" onclick="Dirigir(a)" > Informar</button><br>
+   <input type="text" id="Pergunta" placeholder="inform S ou N" />
+   <button id="BtnInformar"  onclick="Dirigir()" > Informar</button><br>
    <p class="ptn">Você pode dirigir:
-      <span class="ptn" id="ResltadoDrigir"></span>
+      <span class="ptn" id="ResultadoDirigir"></span>
    </p>
 
    <script>
 
       function Dirigir() {
-         var idade = parseInt(document.getElementById("Idade").value);
+         var idade = parseInt(document.getElementById("idade").value);
          var informacao = document.getElementById("Pergunta").value;
 
          var resultado = "";
 
-         if (idade >= 18 &&  informacao == "n") {
+         if (idade >= 18 &&  informacao == "n"){
             resultado = "pode dirigir"
          }
-         else if(idade >= 18 &&  informacao = "s"){
+         else if(idade >= 18 &&  informacao == "s"){
             resultado = "nunca irá dirigir seu canalha!"
          }
-         else if(idade < 18 &  informacao == "s"){
+         else if(idade < 18 &&  informacao == "s"){
             resultado = "mesmo que pudesse não deixaria vc tirar a carta!"
          }
          else if(idade < 18 &&  informacao == "n"){
             resultado = "é só esperar que um dia chega"
          }
 
-         document.getElementById("ResultadoDirigir").textCtent == resultado;
+         document.getElementById("ResultadoDirigir").textContent = resultado;
 
       }
 
