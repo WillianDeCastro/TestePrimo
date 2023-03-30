@@ -1,208 +1,345 @@
 <!DOCTYPE html>
-<html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser redenrizada-->
+<html lang="pr-br">
 
 <head>
+<title>DesafioCarlos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="exercicos, prática">
+<meta name="description" content="informatica, tecnologia">
+<meta name="author" content="carlos">
+    
+<style>
 
-   <title>Minha Pagina de Internet</title>
+body{
+padding: 0;
+margin: 0;
+}
 
-   <style>
-      body {
-         background: green;
-      }
+#Principal{
+font-family: sans-serif;   
+border: 4px solid #000;  
+width: 91%;
+margin: 40px auto;
+border-radius: 1em;
+height: 650px;
+box-sizing: border-box;
+}
 
-      h1 {
-         background-color: blue;
-         color: white
-      }
+h1{
+text-align: center;
+margin-top: 1em;
+}
 
-      .ssds {
-         background-color: cadetblue;
-      }
+button{
+padding: 5px;
+cursor: pointer;
+margin-left: 7px;
+}
 
-      #btnSubtrair {
-         background-color: brown;
-      }
+button:hover{
+background-color: #e1dddd;
+}
 
-      .ptn {
-         display: inline-block;
-      }
+input{
+width: 120px;  
+margin: 2px;
+padding: 2px;
+}
 
-      #resultado {
-         margin-left: 5px;
-         color: rgb(28, 27, 27);
-         text-transform: uppercase;
-         font-family: sans-serif;
 
-      }
-   </style>
+.container div{
+width: 33%;
+height: 300px;
+border: 3px solid #000;
+margin: 15px;
+padding: 2em;
+border-radius: 1em;
+position: relative;
+}
+
+.container{
+display: flex;
+margin: 2em;
+}
+ 
+.teste-paragrafo{
+text-align: center;
+display: block;
+margin: 20px;
+padding-bottom: 15px;
+font-size: 25px;
+}
+
+.testes-input::after{
+content: '';
+background-color: #4ebe7f ;
+}
+
+.input-nome::after{
+content: '';
+background-color:#a08687 ;
+}
+
+.input-sistemas::after{
+content: '';
+background-color: #1ae30e ;
+}
+
+.testes-input::after, .input-nome::after, .input-sistemas::after{
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+opacity: 0.2;
+z-index: -1;
+border-radius: .8em;
+}
+
+.testes-input label{
+display: block;
+margin-top: 20px;
+}
+
+.testes-input input{
+width: 60px;
+}
+
+
+.testes-input span{
+margin-right: 16px;
+}
+
+.somar{
+margin-left: 21px;
+}
+
+
+#input-get{
+margin-top: 15px;
+}
+
+#idade, #pergunta{
+width: 50px; 
+}
+
+#pergunta{
+margin-top: 30px;
+margin-bottom: 18px;
+}
+
+.ptn-buton{
+margin-left: 3px;
+color: red;
+}
+
+
+
+.footer{
+width: 91%;
+height: 3em;
+border: 3px solid #000;
+margin: auto;
+padding: 10px;
+border-radius: 1em;
+font-size: 17px;
+display: flex;
+}
+
+.label-footer{
+display: block;
+margin-top: 13px;
+}
+
+
+#digito{
+display: block;
+margin-left: 5px;
+}
+
+</style>
 
 </head>
 
+
 <body>
 
-
-   <h1> minha Pagina legal</h1>
-   <p>This is a paragraph.</p>
-
-   <button style="background-color: blue;" onClick="alert('hello world')">Clique para ver </button>
-   <br>
-   <label>Pesquise seu Nome </label>
-   <input style="color: red" />
+<div id="Principal">
+<header>
+   <h1>
+    Minha Pagina Legal
+   </h1>
+</header>
 
 
-   <ul>
-      <li>TESTE 1</li>
-      <li>TESTE 2</li>
-      <li>TESTE 3</li>
-      <li>TESTE 4</li>
-      <li>TESTE 5</li>
-   </ul>
+<section>
+    <div class="container" >
+      
+       <div class="testes-input">
+         <p class="teste-paragrafo">Testes com Input</p>
+        <label>Multiplicar
+        <input id="num1Mult" type="number" autofocus/>
+        *
+        <input id="num2Mult" type="number" />
+        <button class="ssds" id="btnMult" onclick="Multplicar()">Ver Resultado</button>
+        </label>
+        
+        <br>
+     
+        <label class="somar">Somar
+        <input id="num1Som" type="number" />
+        +
+        <input id="num2Som" type="number" />
+        <button class="ssds" id="btnSomar" onclick="Somar()">Ver Resultado</button>
+        </label>
+       
+        <br>
+       
+        <label><span>Subtrair</span>
+        <input id="num1Sub" type="number" />
+        -
+        <input id="num2Sub" type="number" />
+        <button id="btnSubtrair" onclick="Subtrair()">Ver Resultado</button>
+      </label> 
+    
+   </div>
+    
+    
+
+       <div class="input-nome" >
+         <p class="teste-paragrafo">Input Nome e Cidade</p>
+        <label>Seu Nome</label>
+         <input type="text" id="NomeDigitado" placeholder="informe seu Nome" />
+         <button id="btnNome" onclick="NomeDigitado()">Click here</button>
+         <p>Resultado Nome:
+          <span id="resultaNome"></span>
+         </p>
+      
+      
+         
+      
+         <label >Sua Cidade</label> 
+         <input type="text" id="input-get" placeholder="informe sua Cidade" />
+         <button onclick="SuaCidade()" id="btn-get">Click here</button><br>
+         <p class="ptn">Resultado Cidade:
+         <span class="ptn" id="resultado"></span>
+         </p>
+      
+      
+       </div>
+   
+    
+    
+       <div class="input-sistemas" >
+         <p class="teste-paragrafo">Sistemas de Habilitação</p>
+        <label>Idade</label>
+        <input type="number" id="idade" placeholder="Idade"  />
+        <br>
+     
+        <label>Gosta de correr igual louco?</label>
+        <input type="text" id="pergunta" placeholder=" S ou N"/>
+        <button  onclick="Dirigir()" > Informar</button><br>
+        <p class="ptn">Você pode dirigir:
+           <span class="ptn-buton" id="ResultadoDirigir"></span>
+        </p>
+       </div>
+  
+   
+ 
+     </div>
+</section>
+
+  
+<section class="section-footer">
+       <div class="footer">
+        
+          <label id="form"  for="valor" class="label-footer">Quantas repete
+          <input type="number" id="valor" onchange="chamar()"/>
+         </label>
+           <p id="digito"></p>
+         
+      
+       </div>
+</section>
+
+</div>
+
+         <script>
+                 function Multplicar() {
+                          var num1 = document.getElementById("num1Mult").value;
+                          var num2 = document.getElementById("num2Mult").value;
+                          var resultado = parseInt(num1) * parseInt(num2);
+                          alert(resultado);
+                 
+                       }
+                       
+                       function Somar() {
+                          var num1 = document.getElementById("num1Som").value;
+                          var num2 = document.getElementById("num2Som").value;
+                          var resultado = parseInt(num1) + parseInt(num2);
+                          alert(resultado);
+                 
+                       }
+                 
+                       function Subtrair() {
+                          var num1 = document.getElementById("num1Sub").value;
+                          var num2 = document.getElementById("num2Sub").value;
+                          var resultado = parseInt(num1) - parseInt(num2);
+                          alert(resultado);
+                 
+                       }
+                 
+                       function NomeDigitado() {
+                          var nomeinformado = document.getElementById("NomeDigitado").value;
+                          document.getElementById("resultaNome").innerHTML = nomeinformado;
+                       }
+                 
+                 
+                 
+                       function SuaCidade() {
+                          var btnGet = document.getElementById("input-get").value;
+                          document.getElementById("resultado").innerHTML = btnGet;
+                 
+                       }
+                 
+                       function Dirigir() {
+                          var idade = parseInt(document.getElementById("idade").value);
+                          var informacao = document.getElementById("pergunta").value;
+                 
+                          var resultado = "";
+                 
+                          if (idade >= 18 &&  informacao.toLowerCase() == "n"){
+                             resultado = "Pode dirigir"
+                          }
+                          else if(idade >= 18 &&  informacao.toLowerCase() == "s"){
+                             resultado = "Nunca irá dirigir seu canalha!"
+                          }
+                          else if(idade <=18 &&  informacao.toLowerCase() == "s") {
+                             resultado = "Mesmo que pudesse não deixaria vc tirar a carta!"
+                          }
+                          else if(idade < 18 &&  informacao.toLowerCase() == "n"){
+                             resultado = "É só esperar que um dia chega"
+                          }
+                 
+                          document.getElementById("ResultadoDirigir").textContent = resultado;
+                 
+                       }
+                      
+                          var captar = "";
+                           function chamar(){
+                          captar = parseInt(document.getElementById("valor").value);
+                           parseInt(document.getElementById("digito").innerHTML = captar);
+                     
+                          document.getElementById("digito").innerText="#";
+                          }
+
+          </script>
 
 
-   <label>Multiplicar</label>
-   <input id="num1Mult" type="number" />
-   *
-   <input id="num2Mult" type="number" />
-   <button class="ssds" id="btnMult" onclick="Multplicar()">Ver Resultado</button>
-   <br>
 
-   <label>Somar</label>
-   <input id="num1Som" type="number" />
-   +
-   <input id="num2Som" type="number" />
-   <button class="ssds" id="btnSomar" onclick="Somar()">Ver Resultado</button>
-
-   <br>
-   <label>Substrair</label>
-   <input id="num1Sub" type="number" />
-   -
-
-   <input id="num2Sub" type="number" />
-   <button id="btnSubtrair" onclick="Subtrair()">Ver Resultado</button>
-
-   <br>
-   <br>
-   <br>
-   <br>
-
-   <label>Seu Nome</label>
-   <input type="text" id="NomeDigitado" />
-   <button id="btnNome" onclick="NomeDigitado()">informe seu nome</button>
-   <p id="resultaNome">Resultado Nome</p>
-
-
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-
-   <label>Sua Cidade</label>
-   <input type="text" id="input-get" name="#" placeholder="coloque sua Cidade" />
-   <button onclick="SuaCidade()" id="btn-get"> Cidade</button><br>
-   <p class="ptn">Resultado Cidade:
-   <p class="ptn" id="resultado"></p>
-   </p>
-
-
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-
-   <hr />
-
-   <label>Idade</label>
-   <input type="text" id="Idade" placeholder="informe sua idade" />
-   <br>
-
-   <label>Gosta de correr igual louco?</label>
-   <input type="text" id="Pergunta" placeholder="inform S ou N" />
-   <button id="BtnInformar" onclick="Dirigir()" > Informar</button><br>
-   <p class="ptn">Você pode dirigir:
-      <span class="ptn" id="ResultadoDirigir"></span>
-   </p>
-
-   <script>
-
-      function Dirigir() {
-         var idade = parseInt(document.getElementById("Idade").value);
-         var informacao = document.getElementById("Pergunta").value;
-
-         var resultado = "";
-
-         if (idade >= 18 &&  informacao == "n") {
-            resultado = "pode dirigir"
-         }
-         else if(idade >= 18 &&  informacao == "s"){
-            resultado = "nunca irá dirigir seu canalha!"
-         }
-         else if(idade < 18 &&  informacao == "s"){
-            resultado = "mesmo que pudesse não deixaria vc tirar a carta!"
-         }
-         else if(idade < 18 &&  informacao == "n"){
-            resultado = "é só esperar que um dia chega"
-         }
-
-         document.getElementById("ResultadoDirigir").textContent = resultado;
-
-      }
-
-      function Multplicar() {
-         var num1 = document.getElementById("num1Mult").value;
-         var num2 = document.getElementById("num2Mult").value;
-         var resultado = parseInt(num1) * parseInt(num2);
-         alert(resultado);
-      }
-
-      function Somar() {
-         var num1 = document.getElementById("num1Som").value;
-         var num2 = document.getElementById("num2Som").value;
-         var resultado = parseInt(num1) * parseInt(num2);
-         alert(resultado);
-
-      }
-
-      function Subtrair() {
-         var num1 = document.getElementById("num1Sub").value;
-         var num2 = document.getElementById("num2Sub").value;
-         var resultado = parseInt(num1) - parseInt(num2);
-         alert(resultado);
-
-      }
-
-      function divisao_numeros() {
-         var num1 = document.getElementById("num1Som").value;
-         var num2 = document.getElementById("num2Som").value;
-         var resultado = parseInt(num1) / parseInt(num2);
-         alert(resultado);
-
-      }
-
-      function MudarNome() {
-         var pResultado = document.getElementById("resulta");
-         pResultado.textContent = "Mirosmar";
-
-
-      }
-
-
-      function NomeDigitado() {
-         var nomeinformado = document.getElementById("NomeDigitado").value;
-         document.getElementById("resultaNome").innerHTML = nomeinformado;
-      }
-
-
-
-      function SuaCidade() {
-         var btnGet = document.getElementById("input-get").value;
-         document.getElementById("resultado").innerHTML = btnGet;
-
-      }
-
-
-  </script>
 </body>
-
 </html>
+
