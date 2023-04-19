@@ -24,6 +24,7 @@
          border-radius: 1em;
          height: 650px;
          box-sizing: border-box;
+         height: 900px;
       }
 
       h1 {
@@ -179,7 +180,7 @@
       <section>
          <div class="container">
 
-            <div class="testes-input" >
+            <div class="testes-input">
                <p class="teste-paragrafo">Testes com Input</p>
                <label>Multiplicar
                   <input id="num1Mult" type="number" autofocus />
@@ -265,11 +266,50 @@
 
 
          </div>
+
+         <div class="footer" style="margin-top: 5%;">
+            <button onclick="ChamarApi()">Chamar Nomes </button>
+            <p style="margin-left: 2%;" id="resultou">Resultado</p>
+         </div>
+
+         <div class="footer" style="margin-top: 5%;">
+            <button onclick="ChamarApiFruta()">Chamar clientes</button>
+            <p style="margin-left: 2%;" id="resultadoFruta">Resultado</p>
+         </div>
+
       </section>
 
    </div>
 
    <script>
+
+      function ChamarApiFruta() {
+
+         fetch('http://localhost:3000/frutas')
+            .then(response => response.json())
+            .then(minhaFruta => {
+
+               document.getElementById("resultadoFruta").innerHTML = minhaFruta;
+
+            })
+
+      }
+
+
+      function ChamarApi() {
+
+
+         fetch('http://localhost:3000/humano')
+            .then(response => response.json())
+            .then(meuRetorno => {
+
+               document.getElementById("resultou").innerHTML = meuRetorno;
+
+
+            })
+
+
+      }
 
       function MeuRepetidor() {
          captar = parseInt(document.getElementById("valor").value);
