@@ -9,160 +9,7 @@
    <meta name="keywords" content="exercicos, prática">
    <meta name="description" content="informatica, tecnologia">
    <meta name="author" content="carlos">
-
-   <style>
-      body {
-         padding: 0;
-         margin: 0;
-      }
-
-      #Principal {
-         font-family: sans-serif;
-         border: 4px solid #000;
-         width: 91%;
-         margin: 40px auto;
-         border-radius: 1em;
-         height: 650px;
-         box-sizing: border-box;
-         height: 900px;
-      }
-
-      h1 {
-         text-align: center;
-         margin-top: 1em;
-      }
-
-      button {
-         padding: 5px;
-         cursor: pointer;
-         margin-left: 7px;
-      }
-
-      button:hover {
-         background-color: #e1dddd;
-      }
-
-      input {
-         width: 120px;
-         margin: 2px;
-         padding: 2px;
-      }
-
-
-      .container div {
-         width: 33%;
-         height: 300px;
-         border: 3px solid #000;
-         margin: 15px;
-         padding: 2em;
-         border-radius: 1em;
-         position: relative;
-      }
-
-      .container {
-         display: flex;
-         margin: 2em;
-      }
-
-      .teste-paragrafo {
-         text-align: center;
-         display: block;
-         margin: 20px;
-         padding-bottom: 15px;
-         font-size: 25px;
-      }
-
-      .testes-input::after {
-         content: '';
-         background-color: #4ebe7f;
-      }
-
-      .input-nome::after {
-         content: '';
-         background-color: #a08687;
-      }
-
-      .input-sistemas::after {
-         content: '';
-         background-color: #1ae30e;
-      }
-
-      .testes-input::after,
-      .input-nome::after,
-      .input-sistemas::after {
-         content: '';
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         left: 0;
-         top: 0;
-         opacity: 0.2;
-         z-index: -1;
-         border-radius: .8em;
-      }
-
-      .testes-input label {
-         display: block;
-         margin-top: 20px;
-      }
-
-      .testes-input input {
-         width: 60px;
-      }
-
-
-      .testes-input span {
-         margin-right: 16px;
-      }
-
-      .somar {
-         margin-left: 21px;
-      }
-
-
-      #input-get {
-         margin-top: 15px;
-      }
-
-      #idade,
-      #pergunta {
-         width: 50px;
-      }
-
-      #pergunta {
-         margin-top: 30px;
-         margin-bottom: 18px;
-      }
-
-      .ptn-buton {
-         margin-left: 3px;
-         color: red;
-      }
-
-
-
-      .footer {
-         width: 91%;
-         height: 3em;
-         border: 3px solid #000;
-         margin: auto;
-         padding: 10px;
-         border-radius: 1em;
-         font-size: 17px;
-         display: flex;
-      }
-
-      .label-footer {
-         display: block;
-         margin-top: 13px;
-      }
-
-
-      #digito {
-         display: block;
-         margin-left: 5px;
-      }
-   </style>
+   <link href="./Css/estilo.css" rel="stylesheet">
 
 </head>
 
@@ -267,50 +114,161 @@
 
          </div>
 
-         <div class="footer" style="margin-top: 5%;">
-            <button onclick="ChamarApi()">Chamar Nomes </button>
-            <p style="margin-left: 2%;" id="resultou">Resultado</p>
+         <div class="footer">
+            <button class="btn-api" onclick="ApiSacolao()">Sacolao </button>
+            <p class="Api-p"> Resultado:<span id="resultadonomes" class="Api-p"></span></p>
          </div>
 
-         <div class="footer" style="margin-top: 5%;">
-            <button onclick="ChamarApiFruta()">Chamar clientes</button>
-            <p style="margin-left: 2%;" id="resultadoFruta">Resultado</p>
+         <div class="footer">
+            <button class="btn-api" onclick="ApiCompras()">Compras </button>
+            <p class="Api-p"> Resultado:<span id="resultado-1" class="Api-p"></span></p>
          </div>
 
-      </section>
+         <div class="footer">
+            <button class="btn-api" onclick="Apifornecedor()">Fornecedor</button>
+            <p class="Api-p"> Resultado:<span id="resultado-2" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiClientes()">Clientes </button>
+            <p class="Api-p"> Resultado:<span id="resultado-3" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiCarros()">Carros</button>
+            <p class="Api-p"> Resultado:<span id="resultado-4" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiTimes()">Times </button>
+            <p class="Api-p"> Resultado:<span id="resultado-5" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiEmpregos()">Empregos </button>
+            <p class="Api-p"> Resultado:<span id="resultado-6" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiImoveis()">Imoveis</button>
+            <p class="Api-p"> Resultado:<span id="resultado-7" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiSorteio()">Sorteio </button>
+            <p class="Api-p"> Resultado:<span id="resultado-8" class="Api-p"></span></p>
+         </div>
+
+         <div class="footer">
+            <button class="btn-api" onclick="ApiLinguagem()">Linguagem </button>
+            <p class="Api-p"> Resultado:<span id="resultado-9" class="Api-p"></span></p>
+         </div>
+         
+    </section>
 
    </div>
 
    <script>
 
-      function ChamarApiFruta() {
+      function ApiSacolao() {
 
-         fetch('http://localhost:3000/frutas')
+            fetch('http://localhost:3000/sacolao')
             .then(response => response.json())
             .then(minhaFruta => {
-
-               document.getElementById("resultadoFruta").innerHTML = minhaFruta;
-
+               document.getElementById("resultadonomes").innerHTML = minhaFruta;
             })
+          }
 
+       
+      function ApiCompras() {
+
+           fetch('http://localhost:3000/compras')
+           .then(response => response.json())
+           .then(compras => {
+               document.getElementById("resultado-1").innerHTML = compras;
+            })
+          }
+
+
+      function Apifornecedor() {
+
+          fetch('http://localhost:3000/fornecedor')
+          .then(response => response.json())
+          .then(fornecedor => {
+            document.getElementById("resultado-2").innerHTML = fornecedor;
+          })
+         }
+    
+         
+      function ApiClientes() {
+
+        fetch('http://localhost:3000/clientes')
+        .then(response => response.json())
+        .then( clientes => {
+          document.getElementById("resultado-3").innerHTML = clientes;
+         })
+        }
+
+
+      function ApiCarros() {
+
+        fetch('http://localhost:3000/Carros')
+        .then(response => response.json())
+        .then(carros => {
+          document.getElementById("resultado-4").innerHTML = carros;
+        })              
       }
 
 
-      function ChamarApi() {
+      function ApiTimes() {
+
+        fetch('http://localhost:3000/times')
+        .then(response => response.json())
+        .then(times => {
+           document.getElementById("resultado-5").innerHTML = times;
+        })
+       }
+
+ 
+       function ApiEmpregos() {
+
+        fetch('http://localhost:3000/empregos')
+        .then(response => response.json())
+        .then(emprego => {
+           document.getElementById("resultado-6").innerHTML = emprego;
+        })
+       }
 
 
-         fetch('http://localhost:3000/humano')
-            .then(response => response.json())
-            .then(meuRetorno => {
+      function ApiImoveis() {
 
-               document.getElementById("resultou").innerHTML = meuRetorno;
+        fetch('http://localhost:3000/imoveis')
+        .then(response => response.json())
+        .then(imoveis => {
+           document.getElementById("resultado-7").innerHTML = imoveis;
+        })
+       }
 
 
-            })
+      function ApiSorteio() {
 
+        fetch('http://localhost:3000/sorteio')
+        .then(response => response.json())
+        .then(sorteio => {
+           document.getElementById("resultado-8").innerHTML = sorteio;
+        })
+       }
 
-      }
+       function ApiLinguagem() {
 
+        fetch('http://localhost:3000/linguagem')
+        .then(response => response.json())
+        .then(linguagem => {
+           document.getElementById("resultado-9").innerHTML = linguagem;
+        })
+       }
+     
+exitcls
       function MeuRepetidor() {
          captar = parseInt(document.getElementById("valor").value);
 
