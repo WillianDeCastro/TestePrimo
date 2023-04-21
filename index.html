@@ -163,112 +163,133 @@
             <button class="btn-api" onclick="ApiLinguagem()">Linguagem </button>
             <p class="Api-p"> Resultado:<span id="resultado-9" class="Api-p"></span></p>
          </div>
-         
-    </section>
+
+      </section>
 
    </div>
 
    <script>
 
+      function ApiRoupas() {
+
+         fetch('http://localhost:3000/roupas')
+            .then(response => response.json())
+            .then(roupas => {
+
+               var lista = "<ul>"
+
+               debugger
+
+               for (let index = 0; index < minhaFruta.length; index++) {
+
+                  lista += "<li>" + minhaFruta[index] + "</li>"
+
+               }
+               lista += "</ul>"
+
+               document.getElementById("resultadonomes").innerHTML = lista;
+            })
+      }
+
       function ApiSacolao() {
 
-            fetch('http://localhost:3000/sacolao')
+         fetch('http://localhost:3000/sacolao')
             .then(response => response.json())
             .then(minhaFruta => {
                document.getElementById("resultadonomes").innerHTML = minhaFruta;
             })
-          }
+      }
 
-       
+
       function ApiCompras() {
 
-           fetch('http://localhost:3000/compras')
-           .then(response => response.json())
-           .then(compras => {
+         fetch('http://localhost:3000/compras')
+            .then(response => response.json())
+            .then(compras => {
                document.getElementById("resultado-1").innerHTML = compras;
             })
-          }
+      }
 
 
       function Apifornecedor() {
 
-          fetch('http://localhost:3000/fornecedor')
-          .then(response => response.json())
-          .then(fornecedor => {
-            document.getElementById("resultado-2").innerHTML = fornecedor;
-          })
-         }
-    
-         
+         fetch('http://localhost:3000/fornecedor')
+            .then(response => response.json())
+            .then(fornecedor => {
+               document.getElementById("resultado-2").innerHTML = fornecedor;
+            })
+      }
+
+
       function ApiClientes() {
 
-        fetch('http://localhost:3000/clientes')
-        .then(response => response.json())
-        .then( clientes => {
-          document.getElementById("resultado-3").innerHTML = clientes;
-         })
-        }
+         fetch('http://localhost:3000/clientes')
+            .then(response => response.json())
+            .then(clientes => {
+               document.getElementById("resultado-3").innerHTML = clientes;
+            })
+      }
 
 
       function ApiCarros() {
 
-        fetch('http://localhost:3000/Carros')
-        .then(response => response.json())
-        .then(carros => {
-          document.getElementById("resultado-4").innerHTML = carros;
-        })              
+         fetch('http://localhost:3000/Carros')
+            .then(response => response.json())
+            .then(carros => {
+               document.getElementById("resultado-4").innerHTML = carros;
+            })
       }
 
 
       function ApiTimes() {
 
-        fetch('http://localhost:3000/times')
-        .then(response => response.json())
-        .then(times => {
-           document.getElementById("resultado-5").innerHTML = times;
-        })
-       }
+         fetch('http://localhost:3000/times')
+            .then(response => response.json())
+            .then(times => {
+               document.getElementById("resultado-5").innerHTML = times;
+            })
+      }
 
- 
-       function ApiEmpregos() {
 
-        fetch('http://localhost:3000/empregos')
-        .then(response => response.json())
-        .then(emprego => {
-           document.getElementById("resultado-6").innerHTML = emprego;
-        })
-       }
+      function ApiEmpregos() {
+
+         fetch('http://localhost:3000/empregos')
+            .then(response => response.json())
+            .then(emprego => {
+               document.getElementById("resultado-6").innerHTML = emprego;
+            })
+      }
 
 
       function ApiImoveis() {
 
-        fetch('http://localhost:3000/imoveis')
-        .then(response => response.json())
-        .then(imoveis => {
-           document.getElementById("resultado-7").innerHTML = imoveis;
-        })
-       }
+         fetch('http://localhost:3000/imoveis')
+            .then(response => response.json())
+            .then(imoveis => {
+               document.getElementById("resultado-7").innerHTML = imoveis;
+            })
+      }
 
 
       function ApiSorteio() {
 
-        fetch('http://localhost:3000/sorteio')
-        .then(response => response.json())
-        .then(sorteio => {
-           document.getElementById("resultado-8").innerHTML = sorteio;
-        })
-       }
+         fetch('http://localhost:3000/sorteio')
+            .then(response => response.json())
+            .then(sorteio => {
+               document.getElementById("resultado-8").innerHTML = sorteio;
+            })
+      }
 
-       function ApiLinguagem() {
+      function ApiLinguagem() {
 
-        fetch('http://localhost:3000/linguagem')
-        .then(response => response.json())
-        .then(linguagem => {
-           document.getElementById("resultado-9").innerHTML = linguagem;
-        })
-       }
-     
-exitcls
+         fetch('http://localhost:3000/linguagem')
+            .then(response => response.json())
+            .then(linguagem => {
+               document.getElementById("resultado-9").innerHTML = linguagem;
+            })
+      }
+
+      exitcls
       function MeuRepetidor() {
          captar = parseInt(document.getElementById("valor").value);
 
