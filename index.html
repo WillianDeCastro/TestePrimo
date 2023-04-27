@@ -113,6 +113,11 @@
 
 
          </div>
+         <div class="footer-li">
+         <div><button class="btn-api" onclick="ApiRoupas()">Roupas</button></div>
+         <p class="api-li"> Resultado:</p>
+         <div><span class="api-p" id="resultadonomes-1"></span></div>
+         </div>
 
          <div class="footer">
             <button class="btn-api" onclick="ApiSacolao()">Sacolao </button>
@@ -180,14 +185,14 @@
 
                debugger
 
-               for (let index = 0; index < minhaFruta.length; index++) {
+               for (let index = 0; index < roupas.length; index++) {
 
-                  lista += "<li>" + minhaFruta[index] + "</li>"
+                  lista += "<li>" + roupas[index] + "</li>"
 
                }
                lista += "</ul>"
 
-               document.getElementById("resultadonomes").innerHTML = lista;
+               document.getElementById("resultadonomes-1").innerHTML = lista;
             })
       }
 

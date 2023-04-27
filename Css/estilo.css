@@ -22,6 +22,7 @@ button {
 padding: 5px;
 cursor: pointer;
 margin-left: 3px;
+
 }
 
 button:hover {
@@ -33,12 +34,14 @@ border-radius: 3px;
 font-size: 16px;
 margin: 8px;
 border-radius: 5px;
+
 }
 
 input {
 width: 120px;
 margin: 1px;
 padding: 2px;
+
 }
 
 .container div {
@@ -141,6 +144,10 @@ display: inline-block;
 margin-left: 15px;
 }
 
+.api-li{
+display: inline-block;
+padding-left: 3px;
+}
 
 .footer {
 width: 91%;
@@ -154,6 +161,22 @@ display: flex;
 margin-top: 3%;
 margin-bottom: 3%;
 }
+
+.footer-li{
+width: 91%;
+border: 3px solid #000;
+margin: auto;
+padding: 10px;
+border-radius: 1em;
+font-size: 17px;
+display: flex;
+margin-top: 3%;
+margin-bottom: 3%;
+
+}
+
+
+
 
 .label-footer {
 display: block;

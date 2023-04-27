@@ -8,13 +8,13 @@ app.use(cors());
 
 app.get("/sacolao", async (req, res) => {
 
-     //var fruta = "moranGO";
+     var fruta = "moranGO";
      var frutas = ["morango", "abacaxi", "mamao", "maça", "banana", "melancia", "jaca", "jabuticaba", "lichia"];
-     // var qtt = 7;
+      var qtt = 7;
 
-     // for (let index = 0; index < qtt; index++) {
-     //      frutas.push(fruta.toLowerCase());
-     // }
+      for (let index = 0; index < qtt; index++) {
+           frutas.push(fruta.toLowerCase());
+      }
      res.json(frutas);
 });
 
