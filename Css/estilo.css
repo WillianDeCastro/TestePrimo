@@ -67,6 +67,12 @@ padding-bottom: 15px;
 font-size: 25px;
 }
 
+.lista-roupas{
+color:blue;
+list-style:none;
+
+}
+
 .testes-input::after {
 content: '';
 background-color: #4ebe7f;
