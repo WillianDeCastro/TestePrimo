@@ -1,10 +1,23 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
 
 const app = express();
 app.use(cors());
+app.use(bodyParser.json());
 
+let tarefas =[];
+
+app.post("/tarefas", async (req, res) => {
+     const { tarefa } = req.body;
+     tarefas.push(tarefa)
+     res.json("deu certo");
+});
+
+app.get("/tarefas", async (req, res) => {
+     res.json(tarefas);
+});
 
 app.get("/sacolao", async (req, res) => {
 

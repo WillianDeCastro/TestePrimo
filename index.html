@@ -113,10 +113,20 @@
 
 
          </div>
+
          <div class="footer-li">
-         <div><button class="btn-api" onclick="ApiRoupas()">Roupas</button></div>
-         <p class="api-li"> Resultado:</p>
-         <div><span class="api-p" id="resultadonomes-1"></span></div>
+            <div>
+               <input type="text" id="nomeTask" />
+               <button class="btn-api" onclick="AddTasks()">Adicionar tarefa</button>
+            </div>
+            <div><span class="api-p" id="todoTask"></span></div>
+         </div>
+
+         <div class="footer-li">
+
+            <div><button class="btn-api" onclick="ApiRoupas()">Roupas</button></div>
+            <p class="api-li"> Resultado:</p>
+            <div><span class="api-p" id="resultadonomes-1"></span></div>
          </div>
 
          <div class="footer">
@@ -175,6 +185,9 @@
 
    <script>
 
+      var tarefas = [];
+      let carName = "teste";
+
       function ApiRoupas() {
 
          fetch('http://localhost:3000/roupas')
@@ -182,8 +195,6 @@
             .then(roupas => {
 
                var lista = "<ul>"
-
-               debugger
 
                for (let index = 0; index < roupas.length; index++) {
 
@@ -375,6 +386,45 @@
          parseInt(document.getElementById("digito").innerHTML = captar);
 
          document.getElementById("digito").innerText = "#";
+      }
+
+
+
+
+      async function  AddTasks() {
+
+
+
+
+         var nomeTarefa = document.getElementById("nomeTask").value;
+
+
+         let data = {
+            "tarefa": nomeTarefa
+         };
+
+         const response = await fetch("http://localhost:3000/tarefas", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+         });
+
+         const result = response.json();
+
+
+         tarefas.push(nomeTarefa);
+         var lista = "<ul>"
+
+         for (let index = 0; index < tarefas.length; index++) {
+
+            lista += "<li>" + tarefas[index] + "</li>"
+
+         }
+
+         lista += "</ul>"
+         document.getElementById("todoTask").innerHTML = lista;
       }
 
 
